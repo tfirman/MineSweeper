@@ -1,0 +1,7 @@
+.square {
+  width: 11%;
+  height: 11%;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 50;
+}

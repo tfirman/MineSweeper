@@ -8,6 +8,25 @@ import { Square } from './models/square.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentGridList: Square[] = makeGrid;
+  selectedSquare = null;
+
+  currentGridList: Square[] = [
+    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
+    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
+    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
+    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
+    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
+    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
+    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
+    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
+    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0)
+  ]
+
+  editSquare(clickedSquare) {
+    this.selectedSquare = clickedSquare;
+  }
+  finishedEditing() {
+    this.selectedSquare = null;
+  }
 
 }

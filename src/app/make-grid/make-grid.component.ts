@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter  } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Square } from '../models/square.model';
 
 @Component({
@@ -6,13 +6,12 @@ import { Square } from '../models/square.model';
   templateUrl: './make-grid.component.html',
   styleUrls: ['./make-grid.component.css']
 })
-export class MakeGrid {
+export class MakeGridComponent {
+  @Input() childGridList: Square[];
+  @Output() clickSender = new EventEmitter();
 
-  constructor() {
-    currentGridList: Square[] = [];
-    for (var i = 0; i < 81; i++) {
-      currentGridList.push(Square(0));
-    }
+  squareClicked(squareToEdit: Square) {
+    this.clickSender.emit(squareToEdit);
   }
 
 }

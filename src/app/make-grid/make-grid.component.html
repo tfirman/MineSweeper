@@ -1,3 +1,5 @@
-<p>
-  make-grid works!
-</p>
+<div class="container">
+   <div class="row">
+      <div *ngFor="let currentSquare of childGridList" class="square" >{{currentSquare.value}}</div>
+   </div>
+</div>

@@ -1,3 +1,4 @@
 <h1>
-  {{title}}
+  Sudoku
 </h1>
+<app-make-grid [childGridList]="currentGridList" (clickSender)="editSquare($event)"></app-make-grid>
