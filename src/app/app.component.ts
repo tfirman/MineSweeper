@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Square } from './models/square.model';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  currentGridList: Square[] = [
+    new Square(0),
+    new Square(1),
+    new Square(9)
+  ];
 }
