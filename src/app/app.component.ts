@@ -8,9 +8,9 @@ import { Square } from './models/square.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentGridList: Square[] = [
-    new Square(0),
-    new Square(1),
-    new Square(9)
-  ];
+  currentGridList: Square[] = [];
+  let numbers = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  for (let num of numbers) {
+    currentGridList.push(Square[num]);
+  }
 }
