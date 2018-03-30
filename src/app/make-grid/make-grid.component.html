@@ -1,5 +1,7 @@
 <div class="container">
    <div class="row">
-      <div *ngFor="let currentSquare of childGridList" class="square" >{{currentSquare.value}}</div>
+      <div *ngFor="let currentSquare of childGridList" class="square" >
+        <div *ngIf="{{currentSquare.value}}; else elseBlock">{{currentSquare.value}}</div>
+        <ng-template #elseBlock> </ng-template>
    </div>
 </div>
