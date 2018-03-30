@@ -8,8 +8,6 @@ import { Square } from './models/square.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentGridList: Square[] = [];
-  for (var i = 0; i < 81; i++) {
-    currentGridList.push(Square[0]);
-  }
+  currentGridList: Square[] = makeGrid;
+
 }
