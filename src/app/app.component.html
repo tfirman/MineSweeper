@@ -1,4 +1,4 @@
 <h1>
   Sudoku
 </h1>
-<app-make-grid [childGridList]="currentGridList" (clickSender)="squareToEdit($event)"></app-make-grid>
+<app-make-grid [childGridList]="currentGridList" [childSelectedSquare]="selectedSquare" (clickSender)="squareToEdit($event)"></app-make-grid>

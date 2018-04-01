@@ -1,10 +1,8 @@
 <div class="container">
    <div class="row">
       <div *ngFor="let currentSquare of childGridList" class="square" >
-          <form>
-            <input [(ngModel)]="currentSquare.value" type="number" name = "0">
-            <label>{{currentSquare.value}}</label>
-          </form>
+        <div (click)="squareClicked(currentSquare)">{{currentSquare.value}}</div>
+        <div *ngIf="currentSquare == childSelectedSquare">X</div>
       </div>
    </div>
 </div>
