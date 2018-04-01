@@ -1,6 +1,7 @@
 <div class="container">
    <div class="row">
       <div *ngFor="let currentSquare of childGridList" class="square" >
-        <div *ngIf="{{currentSquare.value}}">{{currentSquare.value}}</div>
+        <div *ngIf=currentSquare.value>{{currentSquare.value}}</div>
+      </div>
    </div>
 </div>
