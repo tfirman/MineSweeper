@@ -2,6 +2,9 @@
    <div class="row">
       <div *ngFor="let currentSquare of childGridList" class="square" >
         <div *ngIf=currentSquare.value>{{currentSquare.value}}</div>
+        <div *ngIf="selectedSquare">
+          <input type="number" [(ngModel)]="selectedSquare.value" >{{currentSquare.value}}<br>
+        </div>
       </div>
    </div>
 </div>
