@@ -11,15 +11,15 @@ export class AppComponent {
   selectedSquare = null;
 
   currentGridList: Square[] = [
-    new Square(5),new Square(3),new Square(0),new Square(0),new Square(7),new Square(0),new Square(0),new Square(0),new Square(0),
-    new Square(6),new Square(0),new Square(0),new Square(1),new Square(9),new Square(5),new Square(0),new Square(0),new Square(0),
-    new Square(0),new Square(9),new Square(8),new Square(0),new Square(0),new Square(0),new Square(0),new Square(6),new Square(0),
-    new Square(8),new Square(0),new Square(0),new Square(0),new Square(6),new Square(0),new Square(0),new Square(0),new Square(3),
-    new Square(4),new Square(0),new Square(0),new Square(8),new Square(0),new Square(3),new Square(0),new Square(0),new Square(1),
-    new Square(7),new Square(0),new Square(0),new Square(0),new Square(2),new Square(0),new Square(0),new Square(0),new Square(6),
-    new Square(0),new Square(6),new Square(0),new Square(0),new Square(0),new Square(0),new Square(2),new Square(8),new Square(0),
-    new Square(0),new Square(0),new Square(0),new Square(4),new Square(1),new Square(9),new Square(0),new Square(0),new Square(5),
-    new Square(0),new Square(0),new Square(0),new Square(0),new Square(8),new Square(0),new Square(0),new Square(7),new Square(9)
+    new Square(5, true),new Square(3, true),new Square(0,false),new Square(0,false),new Square(7, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(0,false),
+    new Square(6, true),new Square(0,false),new Square(0,false),new Square(1, true),new Square(9, true),new Square(5, true),new Square(0,false),new Square(0,false),new Square(0,false),
+    new Square(0,false),new Square(9, true),new Square(8, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(0,false),new Square(6, true),new Square(0,false),
+    new Square(8, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(6, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(3, true),
+    new Square(4, true),new Square(0,false),new Square(0,false),new Square(8, true),new Square(0,false),new Square(3, true),new Square(0,false),new Square(0,false),new Square(1, true),
+    new Square(7, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(2, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(6, true),
+    new Square(0,false),new Square(6, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(0,false),new Square(2, true),new Square(8, true),new Square(0,false),
+    new Square(0,false),new Square(0,false),new Square(0,false),new Square(4, true),new Square(1, true),new Square(9, true),new Square(0,false),new Square(0,false),new Square(5, true),
+    new Square(0,false),new Square(0,false),new Square(0,false),new Square(0,false),new Square(8, true),new Square(0,false),new Square(0,false),new Square(7, true),new Square(9, true)
   ]
 
   editSquare(clickedSquare) {
