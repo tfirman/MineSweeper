@@ -23,7 +23,9 @@ export class AppComponent {
   ]
 
   squareToEdit(clickedSquare) {
-    this.selectedSquare = clickedSquare;
+    if(!clickedSquare.locked) {
+      this.selectedSquare = clickedSquare;      
+    }
   }
   finishedEditing() {
     this.selectedSquare = null;
