@@ -1,8 +1,8 @@
 <div class="container">
    <div class="row">
       <div *ngFor="let currentSquare of childGridList" class="square" >
-        <div (click)="squareClicked(currentSquare)">{{currentSquare.value}}</div>
-        <div *ngIf="currentSquare == childSelectedSquare">X</div>
+        <div *ngIf="currentSquare == childSelectedSquare; else elseBlock">X</div>
+        <ng-template #elseBlock><div (click)="squareClicked(currentSquare)">{{currentSquare.value}}</div></ng-template>
       </div>
    </div>
 </div>
