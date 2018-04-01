@@ -8,10 +8,6 @@ import { Square } from '../models/square.model';
 })
 export class MakeGridComponent {
   @Input() childGridList: Square[];
-  @Input() childSelectedSquare: Square[];
   @Output() clickSender = new EventEmitter();
 
-  squareClicked(squareToEdit: Square) {
-    this.clickSender.emit(squareToEdit);
-  }
 }

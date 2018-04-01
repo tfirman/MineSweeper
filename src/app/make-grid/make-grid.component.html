@@ -2,7 +2,12 @@
    <div class="row">
       <div *ngFor="let currentSquare of childGridList" class="square" >
         <div *ngIf=currentSquare.value, else elseBlock>{{currentSquare.value}}</div>
-        <ng-template #elseBlock (click)="squareClicked(currentSquare)"> </ng-template>
+        <ng-template #elseBlock>
+          <form>
+            <input [(ngModel)]="currentSquare.value" type="number">
+            <label> </label>
+          </form>
+        </ng-template>
       </div>
    </div>
 </div>
