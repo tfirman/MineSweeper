@@ -22,7 +22,7 @@ export class AppComponent {
     new Square(0,false),new Square(0,false),new Square(0,false),new Square(0,false),new Square(8, true),new Square(0,false),new Square(0,false),new Square(7, true),new Square(9, true)
   ]
 
-  editSquare(clickedSquare) {
+  squareToEdit(clickedSquare) {
     this.selectedSquare = clickedSquare;
   }
   finishedEditing() {
