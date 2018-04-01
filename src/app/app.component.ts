@@ -11,15 +11,15 @@ export class AppComponent {
   selectedSquare = null;
 
   currentGridList: Square[] = [
-    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
-    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
-    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
-    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
-    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
-    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
-    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
-    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),
-    new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0),new Square(0)
+    new Square(5),new Square(3),new Square(0),new Square(0),new Square(7),new Square(0),new Square(0),new Square(0),new Square(0),
+    new Square(6),new Square(0),new Square(0),new Square(1),new Square(9),new Square(5),new Square(0),new Square(0),new Square(0),
+    new Square(0),new Square(9),new Square(8),new Square(0),new Square(0),new Square(0),new Square(0),new Square(6),new Square(0),
+    new Square(8),new Square(0),new Square(0),new Square(0),new Square(6),new Square(0),new Square(0),new Square(0),new Square(3),
+    new Square(4),new Square(0),new Square(0),new Square(8),new Square(0),new Square(3),new Square(0),new Square(0),new Square(1),
+    new Square(7),new Square(0),new Square(0),new Square(0),new Square(2),new Square(0),new Square(0),new Square(0),new Square(6),
+    new Square(0),new Square(6),new Square(0),new Square(0),new Square(0),new Square(0),new Square(2),new Square(8),new Square(0),
+    new Square(0),new Square(0),new Square(0),new Square(4),new Square(1),new Square(9),new Square(0),new Square(0),new Square(5),
+    new Square(0),new Square(0),new Square(0),new Square(0),new Square(8),new Square(0),new Square(0),new Square(7),new Square(9)
   ]
 
   editSquare(clickedSquare) {
