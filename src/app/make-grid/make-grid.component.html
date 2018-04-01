@@ -4,7 +4,9 @@
         <div *ngIf="currentSquare == childSelectedSquare; else elseBlock">X</div>
         <ng-template #elseBlock>
           <div (click)="squareClicked(currentSquare)">
-            <div *ngIf="currentSquare">{{currentSquare.value}}</div>
+            <!-- <div *ngIf="currentSquare.value"> -->
+              {{currentSquare.value}}
+            <!-- </div> -->
           </div>
         </ng-template>
       </div>
