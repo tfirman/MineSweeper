@@ -1,10 +1,8 @@
 <div class="container">
    <div class="row">
       <div *ngFor="let currentSquare of childGridList" class="square" >
-        <div *ngIf=currentSquare.value>{{currentSquare.value}}</div>
-        <div *ngIf="selectedSquare">
-          <input type="number" [(ngModel)]="selectedSquare.value" >{{currentSquare.value}}<br>
-        </div>
+        <div *ngIf=currentSquare.value, else elseBlock>{{currentSquare.value}}</div>
+        <ng-template #elseBlock (click)="squareClicked(squareToEdit)"> </ng-template>
       </div>
    </div>
 </div>

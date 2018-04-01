@@ -14,9 +14,4 @@ export class MakeGridComponent {
   squareClicked(squareToEdit: Square) {
     this.clickSender.emit(squareToEdit);
   }
-
-onKeyDown(event){
-
-}
-
 }
