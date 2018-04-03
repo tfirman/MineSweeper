@@ -8,27 +8,25 @@ import { Square } from './models/square.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selectedSquare = null;
 
   currentGridList: Square[] = [
-    new Square(5, true),new Square(3, true),new Square(0,false),new Square(0,false),new Square(7, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(0,false),
-    new Square(6, true),new Square(0,false),new Square(0,false),new Square(1, true),new Square(9, true),new Square(5, true),new Square(0,false),new Square(0,false),new Square(0,false),
-    new Square(0,false),new Square(9, true),new Square(8, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(0,false),new Square(6, true),new Square(0,false),
-    new Square(8, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(6, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(3, true),
-    new Square(4, true),new Square(0,false),new Square(0,false),new Square(8, true),new Square(0,false),new Square(3, true),new Square(0,false),new Square(0,false),new Square(1, true),
-    new Square(7, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(2, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(6, true),
-    new Square(0,false),new Square(6, true),new Square(0,false),new Square(0,false),new Square(0,false),new Square(0,false),new Square(2, true),new Square(8, true),new Square(0,false),
-    new Square(0,false),new Square(0,false),new Square(0,false),new Square(4, true),new Square(1, true),new Square(9, true),new Square(0,false),new Square(0,false),new Square(5, true),
-    new Square(0,false),new Square(0,false),new Square(0,false),new Square(0,false),new Square(8, true),new Square(0,false),new Square(0,false),new Square(7, true),new Square(9, true)
+    new Square(true, false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(false,false),
+    new Square(true, false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(true, false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),
+    new Square(false,false),new Square(true, false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(false,false),
+    new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),
+    new Square(true, false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(false,false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(true, false),
+    new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),
+    new Square(false,false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(true, false),new Square(false,false),
+    new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(true, false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(true, false),
+    new Square(false,false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(true, false)
   ]
 
   squareToEdit(clickedSquare) {
-    if(!clickedSquare.locked) {
-      this.selectedSquare = clickedSquare;      
+    if(clickedSquare.mine) {
+      console.log("BOOM!");
+    } else {
+      clickedSquare.explored = true;
     }
-  }
-  finishedEditing() {
-    this.selectedSquare = null;
   }
 
 }
