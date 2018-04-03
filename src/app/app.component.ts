@@ -1,31 +1,22 @@
 import { Component, Input } from '@angular/core';
 import { Square } from './models/square.model';
-
+import { CreateGridService } from './create-grid.service'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [CreateGridService]
 })
 export class AppComponent {
 
-  currentGridList: Square[] = [
-    new Square(true, false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(false,false),
-    new Square(true, false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(true, false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),
-    new Square(false,false),new Square(true, false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(false,false),
-    new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),
-    new Square(true, false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(false,false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(true, false),
-    new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),
-    new Square(false,false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(true, false),new Square(false,false),
-    new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(true, false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(true, false),
-    new Square(false,false),new Square(false,false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(false,false),new Square(false,false),new Square(true, false),new Square(true, false)
-  ]
+  constructor(private createGrid: CreateGridService) {}
 
   squareToEdit(clickedSquare) {
     if(clickedSquare.mine) {
       console.log("BOOM!");
     } else {
-      clickedSquare.explored = true;
+      clickedSquare.value = 1;
     }
   }
 

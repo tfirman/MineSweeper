@@ -12,6 +12,7 @@ export class MakeGridComponent {
   @Output() clickSender = new EventEmitter();
 
   squareClicked(squareToEdit: Square) {
+    console.log("A SQUARE WAS FOUND");
     this.clickSender.emit(squareToEdit);
   }
 

@@ -1,14 +1,7 @@
 <div class="container">
    <div class="row">
-      <div *ngFor="let currentSquare of childGridList" class="square" >
-        <div *ngIf="currentSquare == childSelectedSquare; else elseBlock">X</div>
-        <ng-template #elseBlock>
-          <div (click)="squareClicked(currentSquare)">
-            <!-- <div *ngIf="currentSquare.value"> -->
-              {{currentSquare.explored}}
-            <!-- </div> -->
-          </div>
-        </ng-template>
+      <div *ngFor="let currentSquare of childGridList" class="square" (click)="squareClicked(currentSquare)">
+          <p *ngIf="currentSquare.value!=9">{{currentSquare.value}}</p>
       </div>
    </div>
 </div>
