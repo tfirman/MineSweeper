@@ -1,7 +1,9 @@
 import { Square } from './square.model';
 
 export class Grid {
+  contents: Square[] = [];
   constructor(public height:number, public width:number, public bombs:number) {
+
     let area = height * width;
     let placedBombs = 0;
     let Grid: Square [] = [];
@@ -57,7 +59,7 @@ export class Grid {
         }
       }
       Grid[i].value = adjBombs;
-      console.log(Grid[i].mine+"  "+adjBombs);
     }
+    this.contents = Grid;
   }
 }

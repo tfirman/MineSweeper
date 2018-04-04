@@ -10,18 +10,20 @@ import { CreateGridService } from './create-grid.service'
   providers: [CreateGridService]
 })
 export class AppComponent implements OnInit  {
+
+  currentGrid: Square[];
   constructor(private createGrid: CreateGridService) {}
 
   ngOnInit(){
-    var currentGrid = this.createGrid.getGrid();
-    console.log (currentGrid);
+    this.currentGrid = this.createGrid.getGrid().contents;
+    console.log (this.currentGrid);
   }
 
   squareToEdit(clickedSquare) {
     if(clickedSquare.mine) {
       console.log("BOOM!");
     } else {
-      clickedSquare.value = 1;
+      clickedSquare.explored = true;
     }
   }
 
