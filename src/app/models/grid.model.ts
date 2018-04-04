@@ -2,7 +2,7 @@ import { Square } from './square.model';
 
 export class Grid {
   contents: Square[] = [];
-  constructor(public height:number, public width:number, public bombs:number) {
+  constructor(public height:number, public width:number, public bombs:number, public showFlag:boolean) {
 
     let area = height * width;
     let placedBombs = 0;
@@ -13,7 +13,7 @@ export class Grid {
     }
 
     while (Grid.length < area) {
-      Grid.push (new Square (false, 0, false));
+      Grid.push (new Square (false, 0, false, false));
     }
 
     while (placedBombs < bombs) {

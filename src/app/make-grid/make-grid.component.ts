@@ -10,10 +10,14 @@ import { Grid } from '../models/grid.model';
 export class MakeGridComponent {
   @Input() childGridList: Square[];
   @Output() clickSender = new EventEmitter();
+  @Output() rClickSender = new EventEmitter();
 
   squareClicked(squareToEdit: Square) {
     this.clickSender.emit(squareToEdit);
   }
 
+  onRightClick(squareToFlag: Square) {
+    this.rClickSender.emit(squareToFlag);
+  }
 
 }

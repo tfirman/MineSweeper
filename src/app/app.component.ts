@@ -27,4 +27,11 @@ export class AppComponent implements OnInit  {
     }
   }
 
+  squareToFlag(rClickedSquare) {
+    if(rClickedSquare.mine) {
+      console.log("right BOOM!");
+    } else {
+      rClickedSquare.explored = true;
+    }
+  }
 }

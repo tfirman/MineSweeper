@@ -1,6 +1,6 @@
 <div class="container">
    <div class="row">
-      <div *ngFor="let currentSquare of childGridList" class="square" (click)="squareClicked(currentSquare)">
+      <div *ngFor="let currentSquare of childGridList" class="square" (click)="squareClicked(currentSquare)" (contextmenu)=onRightClick($event)>
           <p *ngIf="currentSquare.explored">{{currentSquare.value}}</p>
       </div>
    </div>
