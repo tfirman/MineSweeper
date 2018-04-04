@@ -1,3 +1,3 @@
 export class Square {
-  constructor(public mine: boolean, public value: number) { }
+  constructor(public mine:boolean, public value:number, public explored:boolean) { }
 }
