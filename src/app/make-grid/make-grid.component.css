@@ -1,7 +1,23 @@
 .square {
   width: 11%;
-  height: 100px;
+  padding-top: 11%;
   border: 1px solid black;
   text-align: center;
-  font-size: 70px;
+  font-size: 7vw;
+  position: relative;
+}
+img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
