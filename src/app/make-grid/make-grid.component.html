@@ -1,7 +1,8 @@
 <div class="container">
    <div class="row">
-      <div *ngFor="let currentSquare of childGridList" class="square" (click)="squareClicked(currentSquare)" (contextmenu)=onRightClick($event)>
-          <p *ngIf="currentSquare.explored">{{currentSquare.value}}</p>
+      <div *ngFor="let currentSquare of childGridList" class="square" (click)="squareClicked(currentSquare)" (contextmenu)=onRightClick(currentSquare)>
+          <p *ngIf="currentSquare.explored;else next">{{currentSquare.value}}</p>
+          <ng-template #next><p *ngIf="currentSquare.showFlag"><img src="../../assets/Minesweeper_flag.svg"></p></ng-template>
       </div>
    </div>
 </div>

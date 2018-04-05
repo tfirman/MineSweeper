@@ -8,6 +8,7 @@ import { Grid } from '../models/grid.model';
   styleUrls: ['./make-grid.component.css']
 })
 export class MakeGridComponent {
+  contextmenu = false;
   @Input() childGridList: Square[];
   @Output() clickSender = new EventEmitter();
   @Output() rClickSender = new EventEmitter();
@@ -16,8 +17,13 @@ export class MakeGridComponent {
     this.clickSender.emit(squareToEdit);
   }
 
+  disableContextMenu(){
+     this.contextmenu= false;
+  }
+
   onRightClick(squareToFlag: Square) {
     this.rClickSender.emit(squareToFlag);
+    return false;
   }
 
 }
