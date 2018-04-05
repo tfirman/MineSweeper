@@ -1,7 +1,12 @@
 <div class="container">
    <div class="row">
-      <div *ngFor="let currentSquare of childGridList" class="square" (click)="squareClicked(currentSquare)" (contextmenu)=onRightClick(currentSquare)>
-          <p *ngIf="currentSquare.explored;else next">{{currentSquare.value}}</p>
+      <div *ngFor="let currentSquare of childGridList.sq;let i=index" [ngStyle]="renderSquare()" (click)="squareClicked(i)" (contextmenu)=onRightClick(currentSquare)>
+          <div *ngIf="currentSquare.explored;else next">
+              <div *ngIf="currentSquare.mine;else display">
+                  <p><img src="../../assets/Gnome-gnomine.png"></p>
+              </div>
+              <ng-template #display><p>{{currentSquare.value}}</p></ng-template>
+          </div>
           <ng-template #next><p *ngIf="currentSquare.showFlag"><img src="../../assets/Minesweeper_flag.svg"></p></ng-template>
       </div>
    </div>

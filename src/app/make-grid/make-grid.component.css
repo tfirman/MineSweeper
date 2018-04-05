@@ -1,11 +1,4 @@
-.square {
-  width: 11%;
-  padding-top: 11%;
-  border: 1px solid black;
-  text-align: center;
-  font-size: 7vw;
-  position: relative;
-}
+
 img {
   width: 100%;
   position: absolute;
@@ -15,6 +8,7 @@ img {
   right: 0;
 }
 p {
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;

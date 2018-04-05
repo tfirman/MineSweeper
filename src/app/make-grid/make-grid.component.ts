@@ -8,22 +8,32 @@ import { Grid } from '../models/grid.model';
   styleUrls: ['./make-grid.component.css']
 })
 export class MakeGridComponent {
-  contextmenu = false;
-  @Input() childGridList: Square[];
+
+  @Input() childGridList: Grid;
   @Output() clickSender = new EventEmitter();
   @Output() rClickSender = new EventEmitter();
 
-  squareClicked(squareToEdit: Square) {
+  squareClicked(squareToEdit: number) {
     this.clickSender.emit(squareToEdit);
-  }
-
-  disableContextMenu(){
-     this.contextmenu= false;
   }
 
   onRightClick(squareToFlag: Square) {
     this.rClickSender.emit(squareToFlag);
     return false;
+  }
+
+  renderSquare(){
+    let fontsz = 70/this.childGridList.width
+    let sqsz = 100/this.childGridList.width
+    let myStyles = {
+      'width': sqsz.toString()+'%',
+      'padding-top': sqsz.toString()+'%',
+      'border': '1px solid black',
+      'text-align': 'center',
+      'font-size': fontsz.toString()+'vw',
+      'position': 'relative'
+    }
+    return myStyles;
   }
 
 }

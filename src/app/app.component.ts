@@ -11,24 +11,42 @@ import { CreateGridService } from './create-grid.service'
 })
 export class AppComponent implements OnInit  {
 
-  currentGrid: Square[];
+  currentGrid: Grid;
   constructor(private createGrid: CreateGridService) {}
 
   ngOnInit(){
-    this.currentGrid = this.createGrid.getGrid().contents;
+    this.currentGrid = this.createGrid.getGrid();
     console.log (this.currentGrid);
   }
 
-  squareToEdit(clickedSquare) {
+  squareToEdit(index) {
+    let clickedSquare = this.currentGrid.sq[index];
     if(clickedSquare.mine) {
-      console.log("BOOM!");
+      alert("BOOM!");
+      for (let sqr of this.currentGrid.sq) {
+        sqr.explored = true;
+      }
     } else {
       clickedSquare.explored = true;
+      if(clickedSquare.value == 0) {
+        this.squareWasA0(index);
+      }
     }
   }
 
+  squareWasA0 (i) {
+      let adj = this.currentGrid.getAdjacent(i)
+      for (let sqr of adj) {
+        if((this.currentGrid.sq[sqr].value==0) && (!this.currentGrid.sq[sqr].explored)) {
+          this.currentGrid.sq[sqr].explored = true;
+          this.squareWasA0 (sqr);
+        } else {
+          this.currentGrid.sq[sqr].explored = true;
+        }
+      }
+  }
+
   squareToFlag(rClickedSquare) {
-    rClickedSquare.showFlag = true;
-    console.log("right clicked!")
+    rClickedSquare.showFlag = !rClickedSquare.showFlag;
   }
 }

@@ -8,7 +8,7 @@ export class CreateGridService {
   constructor() {}
 
   getGrid(){
-    let currentGrid = new Grid (9,9,20);
+    let currentGrid = new Grid (10,20,40);
     return currentGrid;
   }
 }
