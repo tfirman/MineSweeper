@@ -35,7 +35,7 @@ export class AppComponent implements OnInit  {
   }
 
   squareWasA0 (i) {
-      let adj = this.currentGrid.getAdjacent(i)
+      let adj = this.currentGrid.getAdjacent(i);
       for (let sqr of adj) {
         if((this.currentGrid.sq[sqr].value==0) && (!this.currentGrid.sq[sqr].explored)) {
           this.currentGrid.sq[sqr].explored = true;
@@ -46,7 +46,15 @@ export class AppComponent implements OnInit  {
       }
   }
 
-  squareToFlag(rClickedSquare) {
-    rClickedSquare.showFlag = !rClickedSquare.showFlag;
+  squareToFlag(index) {
+    let rClickedSquare = this.currentGrid.sq[index];
+      if(rClickedSquare.explored){
+        let adj = this.currentGrid.getAdjacent(index);
+        for (let sqr of adj) {
+          this.squareToEdit(index);
+        }
+      } else {
+        rClickedSquare.showFlag = !rClickedSquare.showFlag;
+      }
   }
 }

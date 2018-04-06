@@ -17,7 +17,7 @@ export class MakeGridComponent {
     this.clickSender.emit(squareToEdit);
   }
 
-  onRightClick(squareToFlag: Square) {
+  onRightClick(squareToFlag: number) {
     this.rClickSender.emit(squareToFlag);
     return false;
   }
