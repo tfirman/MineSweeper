@@ -4,11 +4,13 @@ import { Grid } from './models/grid.model';
 
 @Injectable()
 export class CreateGridService {
-
+  height: number;
+  weight: number;
+  bombs: number;
   constructor() {}
 
-  getGrid(){
-    let currentGrid = new Grid (9,9,10);
+  getGrid(height, weight, bombs){
+    let currentGrid = new Grid (height, weight, bombs);
     return currentGrid;
   }
 }

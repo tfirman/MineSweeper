@@ -15,7 +15,7 @@ export class AppComponent implements OnInit  {
   constructor(private createGrid: CreateGridService) {}
 
   ngOnInit(){
-    this.currentGrid = this.createGrid.getGrid();
+    this.currentGrid = this.createGrid.getGrid(9,9,10);
     console.log (this.currentGrid);
   }
 

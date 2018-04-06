@@ -4,20 +4,15 @@ import { Grid } from '../models/grid.model';
 import { CreateGridService } from '../create-grid.service'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-play-game',
+  templateUrl: './play-game.component.html',
+  styleUrls: ['./play-game.component.css'],
   providers: [CreateGridService]
 })
-export class PlayGameComponent implements OnInit  {
+export class PlayGameComponent {
   numExplored: number = 0;
   currentGrid: Grid;
   constructor(private createGrid: CreateGridService) {}
-
-  ngOnInit(){
-    this.currentGrid = this.createGrid.getGrid();
-    console.log (this.currentGrid);
-  }
 
   squareToEdit(index) {
     let clickedSquare = this.currentGrid.sq[index];
