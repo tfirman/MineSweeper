@@ -5,16 +5,22 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MakeGridComponent } from './make-grid/make-grid.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { routing } from './app.routing';
+import { PlayGameComponent } from './play-game/play-game.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MakeGridComponent
+    MakeGridComponent,
+    WelcomeComponent,
+    PlayGameComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]
