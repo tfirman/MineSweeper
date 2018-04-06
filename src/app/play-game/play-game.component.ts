@@ -8,8 +8,8 @@ import { Grid } from '../models/grid.model';
   styleUrls: ['./play-game.component.css'],
 })
 export class PlayGameComponent {
+  @Input() currentGrid: Grid;
   numExplored: number = 0;
-  currentGrid: Grid;
   constructor(private Grid: Grid) {}
 
   squareToEdit(index) {
