@@ -47,11 +47,9 @@ export class AppComponent implements OnInit  {
   }
 
   squareToFlag(index) {
-    console.log("rclicked");
     let rClickedSquare = this.currentGrid.sq[index];
       if(rClickedSquare.explored){
         let adj = this.currentGrid.getAdjacent(index);
-        console.log(adj);
         for (let sqr of adj) {
           if(!this.currentGrid.sq[sqr].showFlag) {
             this.squareToEdit(sqr);
