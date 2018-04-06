@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl }   from '@angular/forms';
+import { Router } from '@angular/router';
+import { Square } from '../models/square.model';
+import { Grid } from '../models/grid.model';
 
 @Component({
   selector: 'app-welcome',
@@ -18,13 +21,13 @@ export class WelcomeComponent implements OnInit {
 
   startGame(gridsize) {
     let a = gridsize;
-    console.log (a);
     if (a.gridsize=="small"){
-      console.log("s");
+      let currentGrid = new Grid (9,9,10);
+      this.router.navigate(['play-game', clickedAlbum.$key]);
     } else if (a.gridsize=="med"){
-      console.log("m");
+      let currentGrid = new Grid (16,16,40);
     } else if (a.gridsize=="large"){
-      console.log("l");
+      let currentGrid = new Grid (16,30,99);
     }
   };
 
