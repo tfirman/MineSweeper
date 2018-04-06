@@ -8,12 +8,24 @@ import { ReactiveFormsModule, FormGroup, FormControl }   from '@angular/forms';
 })
 export class WelcomeComponent implements OnInit {
   form = new FormGroup({
-    grid: new FormControl('small'),
+    gridsize: new FormControl('small'),
   });
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  startGame(gridsize) {
+    let a = gridsize;
+    console.log (a);
+    if (a.gridsize=="small"){
+      console.log("s");
+    } else if (a.gridsize=="med"){
+      console.log("m");
+    } else if (a.gridsize=="large"){
+      console.log("l");
+    }
+  };
 
 }
