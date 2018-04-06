@@ -1,18 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Square } from '../models/square.model';
 import { Grid } from '../models/grid.model';
-import { CreateGridService } from '../create-grid.service'
 
 @Component({
   selector: 'app-play-game',
   templateUrl: './play-game.component.html',
   styleUrls: ['./play-game.component.css'],
-  providers: [CreateGridService]
 })
 export class PlayGameComponent {
   numExplored: number = 0;
   currentGrid: Grid;
-  constructor(private createGrid: CreateGridService) {}
+  constructor(private Grid: Grid) {}
 
   squareToEdit(index) {
     let clickedSquare = this.currentGrid.sq[index];
