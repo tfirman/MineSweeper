@@ -10,7 +10,7 @@ import { CreateGridService } from './create-grid.service'
   providers: [CreateGridService]
 })
 export class AppComponent implements OnInit  {
-
+  numExplored: number = 0;
   currentGrid: Grid;
   constructor(private createGrid: CreateGridService) {}
 
@@ -27,9 +27,15 @@ export class AppComponent implements OnInit  {
         sqr.explored = true;
       }
     } else {
-      clickedSquare.explored = true;
-      if(clickedSquare.value == 0) {
-        this.squareWasA0(index);
+      if (!clickedSquare.explored) {
+        clickedSquare.explored = true;
+        this.numExplored ++;
+        if (this.numExplored >= (this.currentGrid.height * this.currentGrid.height - this.currentGrid.bombs)) {
+          alert("Congratuations, you win!");
+        }
+        if(clickedSquare.value == 0) {
+          this.squareWasA0(index);
+        }
       }
     }
   }
@@ -37,11 +43,15 @@ export class AppComponent implements OnInit  {
   squareWasA0 (i) {
       let adj = this.currentGrid.getAdjacent(i);
       for (let sqr of adj) {
-        if((this.currentGrid.sq[sqr].value==0) && (!this.currentGrid.sq[sqr].explored)) {
+        if(!this.currentGrid.sq[sqr].explored) {
           this.currentGrid.sq[sqr].explored = true;
-          this.squareWasA0 (sqr);
-        } else {
-          this.currentGrid.sq[sqr].explored = true;
+          this.numExplored ++;
+          if (this.numExplored >= (this.currentGrid.height * this.currentGrid.height - this.currentGrid.bombs)) {
+            alert("Congratuations, you win!");
+          }
+          if (this.currentGrid.sq[sqr].value==0) {
+            this.squareWasA0 (sqr);
+          }
         }
       }
   }
