@@ -1,7 +1,9 @@
-# SudokuAng
+# Minesweeper
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
-The project is intended to present a sudoku puzzle solvable via the user interface.  A method to automatically solve puzzles, to check if an input grid is a valid sudoku with a unique solution, and hopefully a method to draft and/or automatically generate sudoku puzzles may also be created.  Saving user records of completed puzzles may also be incorporated.
+The project is intended to present a minesweeper puzzle via the user interface.  Saving user records of completed puzzles may also be incorporated.
+
+Needs to use firebase per new spec.
 
 ## Development server
 
