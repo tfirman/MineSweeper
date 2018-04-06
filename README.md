@@ -3,6 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 The project is intended to present a sudoku puzzle solvable via the user interface.  A method to automatically solve puzzles, to check if an input grid is a valid sudoku with a unique solution, and hopefully a method to draft and/or automatically generate sudoku puzzles may also be created.  Saving user records of completed puzzles may also be incorporated.
 
+Project is to include Angular pipes, a router, authentication and route guards, API calls, CSS styling, tests using Jasmine and Protractor, this README needs to be styled using GIFs.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
