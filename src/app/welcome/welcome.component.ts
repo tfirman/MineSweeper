@@ -16,20 +16,20 @@ export class WelcomeComponent {
   form = new FormGroup({
     gridsize: new FormControl('small'),
   });
-  currentGrid: Grid;
+  currentGrid: Grid = new Grid (9,9,10);
   constructor(private createGrid: CreateGridService) { }
 
   startGame(gridsize) {
     let a = gridsize;
     if (a.gridsize=="small"){
-      // let currentGrid = new Grid (9,9,10);
-      // this.emitGrid.emit(currentGrid);
+      let currentGrid = new Grid (9,9,10);
+      this.emitGrid.emit(currentGrid);
     } else if (a.gridsize=="med"){
-      // let currentGrid = new Grid (16,16,40);
-      // this.emitGrid.emit(currentGrid);
+      let currentGrid = new Grid (16,16,40);
+      this.emitGrid.emit(currentGrid);
     } else if (a.gridsize=="large"){
-      // let currentGrid = new Grid (16,30,99);
-      // this.emitGrid.emit(currentGrid);
+      let currentGrid = new Grid (16,30,99);
+      this.emitGrid.emit(currentGrid);
     }
   };
 
