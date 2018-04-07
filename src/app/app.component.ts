@@ -16,12 +16,11 @@ export class AppComponent implements OnInit  {
 
   ngOnInit(){
     this.currentGrid = this.createGrid.getGrid(9,9,10);
-    console.log ("initroot");
     console.log (this.currentGrid);
   }
 
   receiveGrid(newGrid){
     this.currentGrid = newGrid;
-    console.log ("yay!");
+    console.log (this.currentGrid);
   }
 }
