@@ -8,13 +8,15 @@ import { MakeGridComponent } from './make-grid/make-grid.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
 import { PlayGameComponent } from './play-game/play-game.component';
+import { NowPlayingPipe } from './nowplaying.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MakeGridComponent,
     WelcomeComponent,
-    PlayGameComponent
+    PlayGameComponent,
+    NowPlayingPipe
   ],
   imports: [
     BrowserModule,

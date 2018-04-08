@@ -10,6 +10,6 @@ import { Grid } from './models/grid.model';
 
 export class NowPlayingPipe implements PipeTransform {
   transform(input: Grid){
-    return input.done;
+    return input.playing;
   }
 }

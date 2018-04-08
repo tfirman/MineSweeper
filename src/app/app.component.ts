@@ -10,6 +10,7 @@ import { CreateGridService } from './create-grid.service'
   providers: [CreateGridService]
 })
 export class AppComponent implements OnInit  {
+  gameOverScreen: boolean = false;
   numExplored: number = 0;
   currentGrid: Grid;
   constructor(private createGrid: CreateGridService) {}
@@ -17,6 +18,7 @@ export class AppComponent implements OnInit  {
   ngOnInit(){
     this.currentGrid = this.createGrid.getGrid(9,9,10);
     console.log (this.currentGrid);
+    this.currentGrid.playing = false;
   }
 
   receiveGrid(newGrid){
@@ -25,21 +27,26 @@ export class AppComponent implements OnInit  {
     console.log (this.currentGrid);
   }
 
+  startNewGame(){
+    this.currentGrid.playing = false;
+    this.gameOverScreen = false;
+  }
+
   squareToEdit(index) {
   let clickedSquare = this.currentGrid.sq[index];
   if(clickedSquare.mine) {
-    alert("BOOM!");
-    this.currentGrid.done = true;
     for (let sqr of this.currentGrid.sq) {
       sqr.explored = true;
     }
+    alert("BOOM!");
+    this.gameOverScreen = true;
   } else {
     if (!clickedSquare.explored) {
       clickedSquare.explored = true;
       this.numExplored ++;
       if (this.numExplored >= (this.currentGrid.height * this.currentGrid.height - this.currentGrid.bombs)) {
         alert("Congratuations, you win!");
-        this.currentGrid.done = true;
+        this.gameOverScreen = true;
       }
       if(clickedSquare.value == 0) {
         this.squareWasA0(index);
@@ -56,6 +63,7 @@ squareWasA0 (i) {
         this.numExplored ++;
         if (this.numExplored >= (this.currentGrid.height * this.currentGrid.height - this.currentGrid.bombs)) {
           alert("Congratuations, you win!");
+          this.gameOverScreen = true;
         }
         if (this.currentGrid.sq[sqr].value==0) {
           this.squareWasA0 (sqr);
