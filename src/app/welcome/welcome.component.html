@@ -5,5 +5,5 @@
   <input type="radio" formControlName="gridsize" value="small" > Beginner : 9 by 9 grid, 10 mines<br>
   <input type="radio" formControlName="gridsize" value="med"> Intermediate : 16 by 16 grid, 40 mines<br>
   <input type="radio" formControlName="gridsize" value="large"> Advanced: 16 by 30 grid, 99 mines<br>
-  <button type="submit" class="btn btn-success" (click)="startGame(form.value)">Start a game!</button>
+  <button type="submit" class="btn" (click)="startGame(form.value)"><a routerLink="play">Start a game!</a></button>
 </form>

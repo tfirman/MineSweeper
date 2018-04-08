@@ -8,10 +8,6 @@ const appRoutes: Routes = [
     path: '',
     component: WelcomeComponent
   },
-  {
-  path: 'play',
-    component: PlayGameComponent
-  },
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id=board>
    <div class="row">
       <div *ngFor="let currentSquare of childGridList.sq;let i=index" [ngStyle]="renderSquare()" (click)="squareClicked(i)" (contextmenu)=onRightClick(i)>
           <div *ngIf="currentSquare.explored;else next" (contextmenu)=onRightClick(i)>
