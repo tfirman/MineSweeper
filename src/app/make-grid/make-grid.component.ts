@@ -23,8 +23,8 @@ export class MakeGridComponent {
   }
 
   renderSquare(){
-    let fontsz = 70/this.childGridList.width
-    let sqsz = 100/this.childGridList.width
+    let sqsz = 100/this.childGridList.width;
+    let fontsz = sqsz*0.7;
     let myStyles = {
       'width': sqsz.toString()+'%',
       'padding-top': sqsz.toString()+'%',

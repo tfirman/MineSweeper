@@ -20,6 +20,7 @@ export class AppComponent implements OnInit  {
   }
 
   receiveGrid(newGrid){
+    this.numExplored = 0;
     this.currentGrid = newGrid;
     console.log (this.currentGrid);
   }
@@ -28,6 +29,7 @@ export class AppComponent implements OnInit  {
   let clickedSquare = this.currentGrid.sq[index];
   if(clickedSquare.mine) {
     alert("BOOM!");
+    this.currentGrid.done = true;
     for (let sqr of this.currentGrid.sq) {
       sqr.explored = true;
     }
@@ -37,6 +39,7 @@ export class AppComponent implements OnInit  {
       this.numExplored ++;
       if (this.numExplored >= (this.currentGrid.height * this.currentGrid.height - this.currentGrid.bombs)) {
         alert("Congratuations, you win!");
+        this.currentGrid.done = true;
       }
       if(clickedSquare.value == 0) {
         this.squareWasA0(index);
@@ -53,7 +56,6 @@ squareWasA0 (i) {
         this.numExplored ++;
         if (this.numExplored >= (this.currentGrid.height * this.currentGrid.height - this.currentGrid.bombs)) {
           alert("Congratuations, you win!");
-          this.numExplored=0;
         }
         if (this.currentGrid.sq[sqr].value==0) {
           this.squareWasA0 (sqr);
