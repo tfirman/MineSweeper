@@ -3,7 +3,6 @@ import { Square } from './square.model';
 
 export class Grid {
   sq: Square[] = [];
-  cssWidth: string = "";
   constructor(public height:number, public width:number, public bombs:number) {
 
     let area = height * width;

@@ -53,6 +53,7 @@ squareWasA0 (i) {
         this.numExplored ++;
         if (this.numExplored >= (this.currentGrid.height * this.currentGrid.height - this.currentGrid.bombs)) {
           alert("Congratuations, you win!");
+          this.numExplored=0;
         }
         if (this.currentGrid.sq[sqr].value==0) {
           this.squareWasA0 (sqr);
