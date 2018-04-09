@@ -1,16 +1,18 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Injectable } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl }   from '@angular/forms';
 import { Router } from '@angular/router';
 import { Square } from '../models/square.model';
 import { Grid } from '../models/grid.model';
 import { User } from '../models/user.model';
 import { CreateGridService } from '../create-grid.service'
+import { UserService } from '../user.service'
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.css'],
-  providers: [CreateGridService]
+  providers: [CreateGridService, UserService]
 })
 export class WelcomeComponent {
   @Output() emitGrid = new EventEmitter();
@@ -21,7 +23,7 @@ export class WelcomeComponent {
     new User("Guest")
   ]
   currentGrid: Grid = new Grid (9,9,10,1,"Guest");
-  constructor(private createGrid: CreateGridService) { }
+  constructor(private createGrid: CreateGridService, private userService: UserService) { }
 
   startGame(gridsize) {
     let a = gridsize;
