@@ -9,8 +9,8 @@ export class CreateGridService {
   bombs: number;
   constructor() {}
 
-  getGrid(height, weight, bombs){
-    let currentGrid = new Grid (height, weight, bombs);
+  getGrid(height, weight, bombs, type, player){
+    let currentGrid = new Grid (height, weight, bombs, type, player);
     return currentGrid;
   }
 }

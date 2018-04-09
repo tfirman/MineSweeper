@@ -4,7 +4,7 @@ import { Square } from './square.model';
 export class Grid {
   sq: Square[] = [];
   playing: boolean = true;
-  constructor(public height:number, public width:number, public bombs:number) {
+  constructor(public height:number, public width:number, public bombs:number, public type: number, public player: string) {
 
     let area = height * width;
     let placedBombs = 0;

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Square } from './models/square.model';
 import { Grid } from './models/grid.model';
+import { User } from './models/user.model';
 import { CreateGridService } from './create-grid.service'
 
 @Component({
@@ -13,10 +14,10 @@ export class AppComponent implements OnInit  {
   gameOverScreen: boolean = false;
   numExplored: number = 0;
   currentGrid: Grid;
-  constructor(private createGrid: CreateGridService) {}
+constructor(private createGrid: CreateGridService) {}
 
   ngOnInit(){
-    this.currentGrid = this.createGrid.getGrid(9,9,10);
+    this.currentGrid = this.createGrid.getGrid(9,9,10,1,"Guest");
     console.log (this.currentGrid);
     this.currentGrid.playing = false;
   }
