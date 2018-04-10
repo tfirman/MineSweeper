@@ -26,6 +26,7 @@ export class AppComponent implements OnInit  {
   numExplored: number = 0;
   currentGrid: Grid;
   currentUser: User;
+  haveAUser: boolean = false;
 constructor(private createGrid: CreateGridService, private userService: UserService) {}
 
   ngOnInit(){
@@ -49,6 +50,7 @@ constructor(private createGrid: CreateGridService, private userService: UserServ
   }
 
   chooseUser(clickedUser: User){
+    this.haveAUser = true;
     this.currentUser = clickedUser;
   }
 

@@ -5,6 +5,8 @@
   <button type="submit" class="btn btn-success" (click)="startNewGame()"><h5>Start a new game!</h5></button>
 </form>
 
-<app-welcome *ngIf="!currentGrid.playing" (emitGrid)="receiveGrid($event)"></app-welcome>
+<div *ngIf="haveAUser">
+  <app-welcome *ngIf="!currentGrid.playing" (emitGrid)="receiveGrid($event)"></app-welcome>
+</div>
 <app-make-grid *ngIf="currentGrid.playing" [childGridList]="currentGrid" (clickSender)="squareToEdit($event)" (rClickSender)="squareToFlag($event)"></app-make-grid>
 <app-list-users *ngIf="!currentGrid.playing" (clickSender)="chooseUser($event)"></app-list-users>
