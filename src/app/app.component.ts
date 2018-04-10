@@ -66,7 +66,7 @@ constructor(private createGrid: CreateGridService, private userService: UserServ
     if (!clickedSquare.explored) {
       clickedSquare.explored = true;
       this.numExplored ++;
-      if (this.numExplored >= (this.currentGrid.height * this.currentGrid.height - this.currentGrid.bombs)) {
+      if (this.numExplored >= (this.currentGrid.height * this.currentGrid.width - this.currentGrid.bombs)) {
         alert("Congratuations, you win!");
         this.currentUser.won[this.currentGrid.type]++;
         this.userService.updateUser(this.currentUser);
