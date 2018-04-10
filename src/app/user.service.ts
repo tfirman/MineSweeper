@@ -13,4 +13,19 @@ export class UserService {
     return this.users;
   }
 
+  getUserById(userId: string){
+    return this.database.object('users/' + userId);
+  }
+
+  addUser(newUser: User) {
+    this.users.push(newUser);
+  }
+
+  updateUser(editUser){
+    var userEntryInFirebase = this.getUserById(editUser.$key);
+    userEntryInFirebase.update({name: editUser.name,
+                                started: editUser.started,
+                                won: editUser.won});
+  }
+
 }

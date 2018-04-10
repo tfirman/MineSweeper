@@ -19,22 +19,22 @@ export class WelcomeComponent {
   form = new FormGroup({
     gridsize: new FormControl('small'),
   });
-  users: User[] = [
-    new User("Guest")
-  ]
+  users: FirebaseListObservable<any[]>;
+  currentUser;
   currentGrid: Grid = new Grid (9,9,10,1,"Guest");
   constructor(private createGrid: CreateGridService, private userService: UserService) { }
+
 
   startGame(gridsize) {
     let a = gridsize;
     if (a.gridsize=="small"){
-      let currentGrid = this.createGrid.getGrid(9,9,10,1,"Guest")
+      let currentGrid = this.createGrid.getGrid(9,9,10,0,"Guest")
       this.emitGrid.emit(currentGrid);
     } else if (a.gridsize=="med"){
-      let currentGrid = this.createGrid.getGrid(16,16,40,2,"Guest");
+      let currentGrid = this.createGrid.getGrid(16,16,40,1,"Guest");
       this.emitGrid.emit(currentGrid);
     } else if (a.gridsize=="large"){
-      let currentGrid = this.createGrid.getGrid(16,30,99,3,"Guest");
+      let currentGrid = this.createGrid.getGrid(16,30,99,2,"Guest");
       this.emitGrid.emit(currentGrid);
     }
   };

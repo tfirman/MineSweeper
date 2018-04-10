@@ -1,0 +1,17 @@
+<h4> Click your user name to get started, or add your name in the form below:</h4>
+<ul>
+  <ul *ngFor="let currentUser of users | async" (click)="nameClicked(currentUser)"><h4>{{currentUser.name}}</h4>
+    <li>Beginner: {{currentUser.won[0]}} games won out of {{currentUser.started[0]}}</li>
+    <li>Intermediate: {{currentUser.won[1]}} games won out of {{currentUser.started[1]}}</li>
+    <li>Advanced: {{currentUser.won[2]}} games won out of {{currentUser.started[2]}}</li>
+  </ul>
+</ul>
+<h3>Add New User</h3>
+<div>
+  <div>
+    <label>Name:</label>
+    <br>
+    <input #newName>
+  </div>
+  <button (click)="submitForm(newName.value)">Add</button>
+</div>
