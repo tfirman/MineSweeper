@@ -30,7 +30,7 @@ export class MakeGridComponent {
       'padding-top': sqsz.toString()+'%',
       'border': '1px solid black',
       'text-align': 'center',
-      'font-size': fontsz.toString()+'vw',
+      'font-size': fontsz.toString()+'vmin',
       'position': 'relative'
     }
     return myStyles;
