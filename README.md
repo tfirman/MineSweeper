@@ -9,13 +9,13 @@ By Tim Firman
 
 ### Installation
 
-If you're running npm, clone this repository and run npm install in the cloned directory
-This project requires a Firebase account setup to run; login to a Firebase account (free is fine) and create a project for this app
-Create a new file named "api-keys.ts" in the src/app directory of the cloned project
-Click "Add Firebase to your Web App" within Firebase and copy the 'var config' block of the script shown into the created file
-Change the phrase 'var config' to 'export var masterFirebaseConfig'
-Then, run 'ng serve' in the project home directory
-Navigate to http://localhost:4200/
+* If you're running npm, clone this repository and run npm install in the cloned directory
+* This project requires a Firebase account setup to run; login to a Firebase account (free is fine) and create a project for this app
+* Create a new file named "api-keys.ts" in the src/app directory of the cloned project
+* Click "Add Firebase to your Web App" within Firebase and copy the 'var config' block of the script shown into the created file
+* Change the phrase 'var config' to 'export var masterFirebaseConfig'
+* Then, run 'ng serve' in the project home directory
+* Navigate a browser to http://localhost:4200/
 
 ###Technologies used
 
