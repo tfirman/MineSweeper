@@ -87,6 +87,9 @@ constructor(private createGrid: CreateGridService, private userService: UserServ
           if (this.numExplored >= (this.currentGrid.height * this.currentGrid.width - this.currentGrid.bombs)) {
             alert("Congratuations, you win!");
             this.currentUser.won[this.currentGrid.type]++;
+            if (this.timeElapsed < this.currentUser.bestTime[this.currentGrid.type]) {
+              this.currentUser.bestTime[this.currentGrid.type] = this.timeElapsed;
+            }
             this.userService.updateUser(this.currentUser);
             this.gameOverScreen = true;
           }
@@ -104,7 +107,7 @@ squareWasA0 (i) {
     if(!this.currentGrid.sq[sqr].explored) {
       this.currentGrid.sq[sqr].explored = true;
       this.numExplored ++;
-      if (this.numExplored >= (this.currentGrid.height * this.currentGrid.height - this.currentGrid.bombs)) {
+      if (this.numExplored >= (this.currentGrid.height * this.currentGrid.width - this.currentGrid.bombs)) {
         alert("Congratuations, you win!");
         this.gameOverScreen = true;
       }

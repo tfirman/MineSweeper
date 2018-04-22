@@ -19,6 +19,6 @@
   <app-list-users *ngIf="!haveAUser" (clickSender)="chooseUser($event)"></app-list-users>
   <app-welcome *ngIf="haveAUser" [childUser]="currentUser" (emitGrid)="receiveGrid($event)"></app-welcome>
   <div id=logout *ngIf="haveAUser">
-    <button type="submit" class="btn btn-secondary" (click)="logOut()">Log out user</button>
+    <button type="submit" class="btn btn-secondary" (click)="logOut()">Log out</button>
   </div>
 </div>

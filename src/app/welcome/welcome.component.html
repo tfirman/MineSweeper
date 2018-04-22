@@ -5,8 +5,14 @@
   </p>
   <form [formGroup]="form">
     <input type="radio" formControlName="gridsize" value="small" > Beginner : 9 by 9 grid, 10 mines<br>
+    Your record is {{childUser.won[0]}} wins in {{childUser.started[0]}} attempts.<br>
+    Your best time was {{childUser.bestTime[0]}} seconds.<br><br>
     <input type="radio" formControlName="gridsize" value="med"> Intermediate : 16 by 16 grid, 40 mines<br>
+    Your record is {{childUser.won[1]}} wins in {{childUser.started[1]}} attempts.<br>
+    Your best time was {{childUser.bestTime[1]}} seconds.<br><br>
     <input type="radio" formControlName="gridsize" value="large"> Advanced: 16 by 30 grid, 99 mines<br>
+    Your record is {{childUser.won[2]}} wins in {{childUser.started[2]}} attempts.<br>
+    Your best time was {{childUser.bestTime[2]}} seconds.<br><br>
     <button type="submit" class="btn btn-success" (click)="startGame(form.value)">Start a game!</button>
   </form>
 </div>

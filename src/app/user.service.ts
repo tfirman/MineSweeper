@@ -25,7 +25,8 @@ export class UserService {
     var userEntryInFirebase = this.getUserById(editUser.$key);
     userEntryInFirebase.update({name: editUser.name,
                                 started: editUser.started,
-                                won: editUser.won});
+                                won: editUser.won,
+                                bestTime: editUser.bestTime});
   }
 
 }
