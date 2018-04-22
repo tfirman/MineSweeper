@@ -17,15 +17,15 @@ By Tim Firman
 * Then, run 'ng serve' in the project home directory
 * Navigate a browser to http://localhost:4200/
 
-###Technologies used
+### Technologies used
 
-Angular2
-Javascript / Typescript
-HTML
-CSS
-Firebase
+* Angular2
+* Javascript / Typescript
+* HTML
+* CSS
+* Firebase
 
-###License
+### License
 
 *This software is licensed under the MIT license.*
 Copyright (c) 2018 Tim Firman
