@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { MakeGridComponent } from './make-grid/make-grid.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
-import { PlayGameComponent } from './play-game/play-game.component';
 import { NowPlayingPipe } from './nowplaying.pipe';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
@@ -26,7 +25,6 @@ export const firebaseConfig = {
     AppComponent,
     MakeGridComponent,
     WelcomeComponent,
-    PlayGameComponent,
     NowPlayingPipe,
     ListUsersComponent
   ],
