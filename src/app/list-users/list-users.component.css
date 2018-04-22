@@ -1,6 +1,8 @@
 #newUserForm {
-  text-align: center;
+  padding-right: 10%;
+  text-align: right;
 }
 #userList {
   padding-left: 10%;
+  float: left;
 }

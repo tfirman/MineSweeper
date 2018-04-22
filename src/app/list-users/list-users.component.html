@@ -1,8 +1,6 @@
 <div id=userList>
-  <h2> Click your user name to get started!</h2>
-  <ul>
-    <ul *ngFor="let currentUser of users | async" (click)="nameClicked(currentUser)"><h4>{{currentUser.name}}</h4>
-    </ul>
+  <h2> Click your user name!</h2>
+  <ul *ngFor="let currentUser of users | async" (click)="nameClicked(currentUser)"><h4>{{currentUser.name}}</h4>
   </ul>
 </div>
 <div id=newUserForm>
