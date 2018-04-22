@@ -4,8 +4,11 @@
 <form *ngIf="gameOverScreen">
   <button type="submit" class="btn btn-success" (click)="startNewGame()"><h5>Start a new game!</h5></button>
 </form>
-<app-make-grid *ngIf="currentGrid.playing" [childGridList]="currentGrid" (clickSender)="squareToEdit($event)" (rClickSender)="squareToFlag($event)"></app-make-grid>
-
+<div *ngIf="currentGrid.playing">
+  <h3 class=floatleft>{{totalFlags}}/{{currentGrid.bombs}}</h3>
+  <h3 class=alignright>{{timeElapsed}}</h3>
+  <app-make-grid [childGridList]="currentGrid" (clickSender)="squareToEdit($event)" (rClickSender)="squareToFlag($event)"></app-make-grid>
+</div>
 <div *ngIf="!currentGrid.playing">
   <div id=rules>
     <p>The classic puzzle game in which mines are randomly distributed on the map, and the user clicks squares to explore.<br>

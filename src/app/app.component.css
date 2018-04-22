@@ -11,3 +11,11 @@ form {
 #logout {
   text-align: center;
 }
+.floatleft {
+  padding-left: 10%;
+  float: left;
+}
+.alignright {
+  padding-right: 10%;
+  text-align: right;
+}

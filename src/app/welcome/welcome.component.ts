@@ -28,13 +28,13 @@ export class WelcomeComponent {
   startGame(gridsize) {
     let a = gridsize;
     if (a.gridsize=="small"){
-      let currentGrid = this.createGrid.getGrid(9,9,10,0,"Guest")
+      let currentGrid = this.createGrid.getGrid(9,9,10,0)
       this.emitGrid.emit(currentGrid);
     } else if (a.gridsize=="med"){
-      let currentGrid = this.createGrid.getGrid(16,16,40,1,"Guest");
+      let currentGrid = this.createGrid.getGrid(16,16,40,1);
       this.emitGrid.emit(currentGrid);
     } else if (a.gridsize=="large"){
-      let currentGrid = this.createGrid.getGrid(16,30,99,2,"Guest");
+      let currentGrid = this.createGrid.getGrid(16,30,99,2);
       this.emitGrid.emit(currentGrid);
     }
   };
