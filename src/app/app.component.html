@@ -4,9 +4,15 @@
 <form *ngIf="gameOverScreen">
   <button type="submit" class="btn btn-success" (click)="startNewGame()"><h5>Start a new game!</h5></button>
 </form>
-
-<div *ngIf="haveAUser">
-  <app-welcome *ngIf="!currentGrid.playing" (emitGrid)="receiveGrid($event)"></app-welcome>
-</div>
 <app-make-grid *ngIf="currentGrid.playing" [childGridList]="currentGrid" (clickSender)="squareToEdit($event)" (rClickSender)="squareToFlag($event)"></app-make-grid>
-<app-list-users *ngIf="!currentGrid.playing" (clickSender)="chooseUser($event)"></app-list-users>
+
+<div *ngIf="!currentGrid.playing">
+  <div id=rules>
+    <p>The classic puzzle game in which mines are randomly distributed on the map, and the user clicks squares to explore.<br>
+    Explore an empty square to learn the number of mines adjacent, but if you explore a mined square it's game over!<br>
+    Right click an unexplored square to mark it as believed to be mined.<br>
+    Right click an explored square to explore all unmarked squares around it.</p>
+  </div>
+  <app-welcome *ngIf="haveAUser" (emitGrid)="receiveGrid($event)"></app-welcome>
+  <app-list-users *ngIf="!haveAUser" (clickSender)="chooseUser($event)"></app-list-users>
+</div>

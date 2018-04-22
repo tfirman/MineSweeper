@@ -1,9 +1,11 @@
-<p>
-  Please choose a grid size to play:
-</p>
-<form [formGroup]="form">
-  <input type="radio" formControlName="gridsize" value="small" > Beginner : 9 by 9 grid, 10 mines<br>
-  <input type="radio" formControlName="gridsize" value="med"> Intermediate : 16 by 16 grid, 40 mines<br>
-  <input type="radio" formControlName="gridsize" value="large"> Advanced: 16 by 30 grid, 99 mines<br>
-  <button type="submit" class="btn" (click)="startGame(form.value)">Start a game!</button>
-</form>
+<div>
+  <p>
+    Please choose a grid size to play:
+  </p>
+  <form [formGroup]="form">
+    <input type="radio" formControlName="gridsize" value="small" > Beginner : 9 by 9 grid, 10 mines<br>
+    <input type="radio" formControlName="gridsize" value="med"> Intermediate : 16 by 16 grid, 40 mines<br>
+    <input type="radio" formControlName="gridsize" value="large"> Advanced: 16 by 30 grid, 99 mines<br>
+    <button type="submit" class="btn btn-success" (click)="startGame(form.value)">Start a game!</button>
+  </form>
+</div>
