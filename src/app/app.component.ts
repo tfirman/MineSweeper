@@ -54,6 +54,10 @@ constructor(private createGrid: CreateGridService, private userService: UserServ
     this.currentUser = clickedUser;
   }
 
+  logOut(){
+    this.haveAUser = false;
+  }
+
   squareToEdit(index) {
   let clickedSquare = this.currentGrid.sq[index];
   if(clickedSquare.mine) {

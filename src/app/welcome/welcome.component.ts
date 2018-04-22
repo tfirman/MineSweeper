@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Injectable } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter, Injectable } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl }   from '@angular/forms';
 import { Router } from '@angular/router';
 import { Square } from '../models/square.model';
@@ -15,13 +15,13 @@ import { FirebaseListObservable } from 'angularfire2/database';
   providers: [CreateGridService, UserService]
 })
 export class WelcomeComponent {
+  @Input() childUser: User;
   @Output() emitGrid = new EventEmitter();
   form = new FormGroup({
     gridsize: new FormControl('small'),
   });
   users: FirebaseListObservable<any[]>;
-  currentUser;
-  currentGrid: Grid = new Grid (9,9,10,1,"Guest");
+  currentGrid: Grid;
   constructor(private createGrid: CreateGridService, private userService: UserService) { }
 
 
